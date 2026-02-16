@@ -1,0 +1,236 @@
+:root {
+  --bg: #081326;
+  --bg-alt: #0d1f3a;
+  --text: #ecf5ff;
+  --muted: #b7c9e4;
+  --accent: #39d0ff;
+  --danger: #ff6e7f;
+  --glass: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.26);
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 10%, #164678, var(--bg));
+  min-height: 100vh;
+}
+
+.bg-orb {
+  position: fixed;
+  filter: blur(50px);
+  opacity: 0.5;
+  border-radius: 9999px;
+  z-index: 0;
+}
+
+.orb-one {
+  width: 340px;
+  height: 340px;
+  background: #45ffd7;
+  top: -80px;
+  left: -80px;
+}
+
+.orb-two {
+  width: 300px;
+  height: 300px;
+  background: #45a4ff;
+  right: -80px;
+  bottom: -80px;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.glass {
+  backdrop-filter: blur(16px);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  border-radius: 18px;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.subtle {
+  color: var(--muted);
+}
+
+.field {
+  display: block;
+  margin: 10px 0;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(100deg, #2be6ff, #3b9eff);
+  color: #04203f;
+  font-weight: 600;
+}
+
+.btn-danger {
+  background: rgba(255, 110, 127, 0.28);
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 12px 0;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.messages {
+  flex: 1;
+  min-height: 250px;
+  max-height: 70vh;
+  overflow: auto;
+  display: grid;
+  gap: 8px;
+  padding: 10px 2px;
+}
+
+.bubble {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  max-width: 85%;
+}
+
+.bubble.self {
+  margin-left: auto;
+  background: rgba(57, 208, 255, 0.32);
+}
+
+.bubble .meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+}
+
+.composer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.participants {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.call-box {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.call-box h3 {
+  margin: 0 0 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-actions {
+  margin: 8px 0;
+}
+
+.video-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+video {
+  width: 100%;
+  background: #001126;
+  border-radius: 10px;
+  min-height: 100px;
+}
+
+@media (max-width: 1080px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .messages {
+    max-height: 45vh;
+  }
+}

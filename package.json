@@ -1,0 +1,10 @@
+{
+  "name": "texty",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Texty - real-time messaging with voice and video calling",
+  "scripts": {
+    "dev": "npm --prefix server run dev",
+    "start": "npm --prefix server start"
+  }
+}
