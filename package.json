@@ -5,6 +5,7 @@
   "description": "Texty - real-time messaging with voice and video calling",
   "scripts": {
     "dev": "npm --prefix server run dev",
-    "start": "npm --prefix server start"
+    "postinstall": "npm --prefix server install",
+    "start": "npm --prefix server run migrate && npm --prefix server start"
   }
 }
